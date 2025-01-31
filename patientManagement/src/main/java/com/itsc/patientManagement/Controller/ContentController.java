@@ -20,9 +20,4 @@ public class ContentController {
         return "index";
     }
 
-    // @GetMapping("/patients")
-    // public String dashboard() {
-    // return "patients";
-    // }
-
 }
