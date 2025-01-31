@@ -24,7 +24,7 @@ The **Patient Management System** is a full-stack web application that allows **
 | Backend    | Spring Boot (Java)               |
 | Frontend   | HTML, CSS, JavaScript, Thymeleaf |
 | Database   | MySQL                            |
-| Security   | Spring Security (Optional)       |
+| Security   | Spring Security                  |
 | IDE        | VS Code / Eclipse                |
 | Build Tool | Maven                            |
 
