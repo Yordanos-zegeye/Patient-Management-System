@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.itsc.patientManagement.Model.Patient;
 import com.itsc.patientManagement.Services.PatientService;
 
-
 @Controller
 @RequestMapping("/patients")
 public class PatientController {
@@ -35,6 +34,19 @@ public class PatientController {
     public String deletePatient(@PathVariable Long id) {
         patientService.deletePatient(id);
 
+        return "redirect:/patients";
+    }
+
+    @GetMapping("/edit/{id}")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Patient patient = patientService.getPatientById(id);
+        model.addAttribute("patient", patient);
+        return "patient-form";
+    }
+
+    @PostMapping("/update/{id}")
+    public String updatePatient(@PathVariable Long id, @ModelAttribute Patient patient) {
+        patientService.updatePatient(patient.getId(), patient);
         return "redirect:/patients";
     }
 

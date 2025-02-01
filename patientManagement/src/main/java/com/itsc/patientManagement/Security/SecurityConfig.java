@@ -51,13 +51,16 @@ public class SecurityConfig {
                 .formLogin(httpForm -> {
                     httpForm
                             .loginPage("/login").permitAll();
+
                     httpForm.defaultSuccessUrl("/index");
 
                 })
                 .authorizeHttpRequests(registry -> {
-                    registry.requestMatchers("/req/signup", "/style.css", "/signup.js").permitAll();
+                    registry.requestMatchers("/req/signup", "/style.css", "/signup.js", "/logout").permitAll();
                     registry.anyRequest().authenticated();
                 })
+                .logout(config -> config
+                        .logoutSuccessUrl("/login"))
                 .build();
     }
 }

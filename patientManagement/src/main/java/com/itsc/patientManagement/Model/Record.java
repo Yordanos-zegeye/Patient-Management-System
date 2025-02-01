@@ -16,7 +16,8 @@ public class Record {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
+    private String diagnosis;
+    private String Treatment;
     private LocalDate date;
 
     @ManyToOne

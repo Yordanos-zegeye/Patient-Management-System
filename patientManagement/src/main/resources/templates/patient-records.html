@@ -26,9 +26,18 @@
           <div class="col-md-6">
             <input
               type="text"
-              name="description"
+              name="diagnosis"
               class="form-control"
-              placeholder="Record Description"
+              placeholder="Record Diagnosis"
+              required
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              name="treatment"
+              class="form-control"
+              placeholder="Record Treatment"
               required
             />
           </div>
@@ -57,7 +66,14 @@
               <a
                 th:href="@{/records/view/{id}(id=${record.id})}"
                 class="text-decoration-none"
-                th:text="${record.description}"
+                th:text="${record.diagnosis}"
+              ></a>
+            </td>
+            <td>
+              <a
+                th:href="@{/records/view/{id}(id=${record.id})}"
+                class="text-decoration-none"
+                th:text="${record.treatment}"
               ></a>
             </td>
             <td th:text="${record.date}"></td>

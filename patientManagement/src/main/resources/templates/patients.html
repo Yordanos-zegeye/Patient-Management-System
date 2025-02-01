@@ -34,6 +34,13 @@
               required
             />
           </div>
+          <div class="col-md-3">
+            <select name="gender" id="gender" class="form-select" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
           <div class="col-md-4">
             <button type="submit" class="btn btn-primary w-100">
               Add Patient
@@ -47,6 +54,7 @@
           <tr>
             <th>Name</th>
             <th>Age</th>
+            <th>Gender</th>
             <th>Records</th>
             <th>Actions</th>
           </tr>
@@ -55,6 +63,7 @@
           <tr th:each="patient : ${patients}">
             <td th:text="${patient.name}"></td>
             <td th:text="${patient.age}"></td>
+            <td th:text="${patient.gender}"></td>
             <td th:text="${patient.getRecordCount()}"></td>
             <td>
               <a
@@ -62,6 +71,12 @@
                 class="btn btn-success btn-sm"
                 >View Records</a
               >
+              <a
+                th:href="@{/patients/edit/{id}(id=${patient.id})}"
+                class="btn btn-primary btn-sm"
+                >Update</a
+              >
+
               <a
                 th:href="@{/patients/delete/{id}(id=${patient.id})}"
                 class="btn btn-danger btn-sm"

@@ -15,8 +15,12 @@
       <div class="card p-4 shadow-sm">
         <h1 class="text-center mb-4">Record Details</h1>
         <p>
-          <strong>Description:</strong>
-          <span th:text="${record.description}"></span>
+          <strong>Diagnosis:</strong>
+          <span th:text="${record.diagnosis}"></span>
+        </p>
+        <p>
+          <strong>Treatment:</strong>
+          <span th:text="${record.treatment}"></span>
         </p>
         <p><strong>Date:</strong> <span th:text="${record.date}"></span></p>
       </div>

@@ -4,11 +4,14 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
+
 
 @Entity
 @Data
@@ -19,6 +22,7 @@ public class Patient {
 
     private String name;
     private int age;
+    private String gender;
 
     @OneToMany(mappedBy = "patient", cascade = CascadeType.ALL)
     private List<Record> records;
@@ -27,3 +31,6 @@ public class Patient {
         return records != null ? records.size() : 0;
     }
 }
+
+
+
